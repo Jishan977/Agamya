@@ -1167,7 +1167,7 @@ a {
 
   .hero {
     height: 100vh;
-    background-image: url(../../Images/Images/HomePage/Slider/Mobile/mobile_slider1.jpg);
+    background-image: url(../../Images/Images/HomePage/Slider/mobile_slider1.jpg);
   }
   .hero__layer {
     background-color: rgba(0, 0, 0, 0.4);
@@ -1237,15 +1237,15 @@ a {
 .explore__cards {
   display: grid;
   place-items: center;
-  background-color: #E0E5EC;
+  background-color: #c3d2e7;
   padding: 4rem 0;
 }
 .explore__product {
   max-width: 42rem;
   padding: 0.8rem 1.1rem;
   margin: 0.8rem 0;
-  background-color: #E0E5EC;
-  box-shadow: -7px -7px 10px #fff, 7px 7px 16px rgba(0, 0, 0, 0.7);
+  background-color: #c3d2e7;
+  box-shadow: -7px -7px 10px #e7ebf0, 7px 7px 16px rgba(0, 0, 0, 0.7);
   border-radius: 1.5rem;
 }
 .explore--product2 {
