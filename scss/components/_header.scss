@@ -1,0 +1,83 @@
+@use '../abstracts/colors';
+@use '../abstracts/media-query';
+@use '../abstracts/variables';
+@use 'navbar';
+@use 'logo';
+@use 'hamburger';
+
+
+
+
+
+
+@mixin header {
+    // ===================================TOP HEADER INFO=================================
+
+    .header{
+
+        &__info {
+            background-color: colors.$black;
+            color: colors.$white;
+            padding: 7px 0;
+            
+        }
+        &__topInfo {
+            font-weight: 500;
+
+            &-address, &-phoneNumber {
+                margin-right: 2em;
+            }
+        }
+    }
+
+    @include media-query.mobile-header__info;
+
+    // ===================================TOP HEADER INFO=================================
+
+
+
+
+
+
+
+
+
+    // =======================================HEADER LOGO & NAVBAR=====================================
+
+    .header {
+
+        @include navbar.navbar();
+
+        @include logo.logo();
+    }
+
+    @include media-query.small-headerLogo;
+
+    // =======================================HEADER LOGO & NAVBAR=====================================
+
+
+
+
+
+
+
+
+
+
+
+    // =======================================NAVIGATION AND DROPDOWN=====================================
+
+    .header {
+        @include media-query.navigation;
+    }
+
+    @include hamburger.hamburger();
+
+    @include media-query.responsive-hamburger;
+
+    @include media-query.navigation-dropdown-forBigScreen;
+
+    @include media-query.navigation-dropdown-forSmallScreen;
+
+    // =======================================NAVIGATION AND DROPDOWN=====================================
+}

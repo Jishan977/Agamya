@@ -1,0 +1,154 @@
+@use 'components/header';
+@use 'abstracts/utilities';
+@use 'abstracts/media-query';
+@use 'abstracts/colors';
+@use 'abstracts/mixins';
+@use 'components/button';
+@use 'abstracts/variables';
+@use 'components/footer';
+@use 'components/inner-hero';
+
+
+
+
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+@include utilities.universal; 
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HEADER ======================================================
+
+@include header.header;
+
+// ==================================== HEADER ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HERO ======================================================
+
+.hero {
+    background-image: url(../Images/Images/Services/Loan/loans_1.jpg);
+    @include inner-hero.inner-hero;
+}
+
+// ==================================== HERO ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== LOANS======================================================
+
+
+.loans {
+    width: 100%;
+    margin-top: variables.$sectionXMT;
+
+    &__heading {
+        font-size: variables.$sectionHeadingFont-X;
+        text-align: center;
+        margin-bottom: variables.$sectionHeadXMB;
+    }
+
+    &__container {
+        width: 70%;
+    }
+
+    &__wrapper {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__product {
+        width: 23rem;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+        background-color: #ECF0F3; 
+        border-radius: 5rem;
+        box-shadow: -7px -7px 10px #ffffff, 7px 7px 16px rgba(#768491, .7);
+        margin-bottom: 8rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:nth-last-child(2) {
+            margin-bottom: 0;
+            align-self: flex-start;
+        }
+    }
+
+    &__product-name {
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        text-align: center;
+    }
+
+    @include media-query.loans-deposits;
+}
+
+// ==================================== LOANS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================================== FOOTER ======================================================
+
+@include footer.footer;
+
+// ========================================== FOOTER ======================================================
+

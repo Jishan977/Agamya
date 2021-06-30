@@ -1,0 +1,43 @@
+
+@mixin hamburger (
+    $main-width: 1.7rem,
+    $main-height: 0.17rem,
+    $before-width: 1.7rem,
+    $before-height: 0.17rem,
+    $before-top: .5rem,
+    $after-width: 1.7rem,
+    $after-height: 0.17rem,
+    $after-top: -.5rem,
+) {
+    .header__hamLogo {
+        width: $main-width;
+        height: $main-height;
+        background-color: #fff;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: $before-width;
+            height: $before-height;
+            background-color: #fff;
+            position: absolute;
+            top: $before-top;
+            left: 0;
+        }
+
+        &::after {
+            content: '';
+            width: $after-width;
+            height: $after-height;
+            background-color: #fff;
+            position: absolute;
+            top: $after-top;
+            left: 0;
+        }
+    }
+
+    .header__hamburger {
+        padding: 1.5rem 0 1.5rem 1.5rem;
+        cursor: pointer;
+    }
+}

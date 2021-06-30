@@ -1,0 +1,166 @@
+@use 'components/header';
+@use 'abstracts/utilities';
+@use 'abstracts/media-query';
+@use 'abstracts/colors';
+@use 'abstracts/mixins';
+@use 'components/button';
+@use 'abstracts/variables';
+@use 'components/footer';
+@use 'components/inner-hero';
+
+
+
+
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+@include utilities.universal; 
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HEADER ======================================================
+
+@include header.header;
+
+// ==================================== HEADER ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HERO ======================================================
+
+.hero {
+    background-image: url(../Images/Images/About/Management_team/mgmt_team_1.jpg);
+    @include inner-hero.inner-hero;
+}
+
+// ==================================== HERO ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== MGMT AGAMYA ======================================================
+
+.mgmt {
+    margin-top: variables.$sectionXMT;
+
+    &__heading {
+        font-size: variables.$sectionHeadingFont-X;
+        text-align: center;
+        margin-bottom: variables.$sectionHeadXMB;
+        text-transform: capitalize;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__person {
+        width: 30rem;
+        background: #D9EFE3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        margin-bottom: 8rem;
+        border-radius: 4rem;
+        box-shadow: -7px -7px 10px #f0faf4, 7px 7px 16px rgba(#7d9c89, .7);
+    }
+
+    &__person:last-child {
+        margin-bottom: 0;
+    }
+
+    &__person:nth-last-child(2) {
+        margin-bottom: 0;
+        align-self: flex-start;
+    }
+
+    &__imgWrapper {
+        border-radius: 50%;
+        display: inline-block;
+        overflow: hidden;
+        width: 12rem;
+        height: 12rem;
+    }
+
+    &__img {
+        width: 12.65rem
+    }
+
+    &__info {
+        align-self: flex-start;
+        margin-top: 1.5rem;
+    }
+
+    &__name {
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        margin-bottom: .5rem;
+    }
+
+    &__designation {
+        text-transform: capitalize;
+        font-size: 1rem;
+    }
+
+    @include media-query.bod-mgmt;
+}
+
+// ==================================== MGMT AGAMYA ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================================== FOOTER ======================================================
+
+@include footer.footer;
+
+// ========================================== FOOTER ======================================================
+

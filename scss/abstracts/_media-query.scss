@@ -1,0 +1,1932 @@
+@use '../components/logo';
+@use '../components/navbar';
+@use '../components/hamburger';
+@use 'mixins';
+@use 'colors';
+@use '../components/button';
+@use 'variables';
+
+
+@mixin mobile-container {
+
+    @media only screen and (max-width: 550px) {
+        .container {
+            max-width: 95%;
+            margin: auto;
+        }
+    }
+}
+
+
+
+
+
+// ==================================== TOP HEADER INFO ===================================
+
+@mixin mobile-header__info {
+
+    @media only screen and (max-width: 600px) {
+        .header__info {
+            display: none;
+        }
+    }
+
+    @media only screen and  (max-width: 760px) {
+        .header__topInfo {
+            font-size: 0.65rem;
+
+            &-address, &-phoneNumber {
+                margin-right: 1.7em;
+            }
+        }
+    }
+}
+
+// ==================================== TOP HEADER INFO ===================================
+
+
+
+
+
+
+
+
+
+// ==================================== LOGO ===================================
+
+@mixin small-headerLogo {
+    @media only screen and (max-width: 850px) {
+        .header {
+
+            @include navbar.navbar(.5rem);
+
+            @include logo.logo(.4rem, 8rem, 0.75rem, 1.2rem, 4.5rem);
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        .header {
+
+            @include navbar.navbar(.4rem);
+
+            @include logo.logo(.35rem, 7rem, 0.7rem, 1rem, 4rem);
+        }
+    }
+}
+
+// ==================================== LOGO ===================================
+
+
+
+
+
+
+
+
+
+
+// ==================================== NAVIGATION & DROPDOWN =======================================================
+
+@mixin navigation {
+    @media only screen and (min-width: 1330px) {
+
+        @include navbar.nav-largeScreenOnly;
+
+        @include mixins.navbar-listWidth-big;
+
+        @include navbar.nav-bigscreen;
+
+        .header__connect {
+            display: none;
+        }
+
+    }
+
+
+    @media only screen and (min-width: 1110px) and (max-width:1330px) {
+
+        @include navbar.nav-bigscreen;
+
+        @include navbar.nav-smallLargeScreenOnly;
+
+        @include mixins.navbar-listWidth-small;
+
+        .header__connect {
+            display: none;
+        }
+
+    }
+     
+
+    @media only screen and (min-width:850px) and (max-width:1110px) {
+
+        @include navbar.big-tabletScreenOnly;
+
+        @include navbar.small-responsiveScreen;
+
+        @include navbar.connect(8rem, 5rem, 2rem, 13rem, 2rem, 0rem, 2rem);
+
+    }
+
+
+    @media only screen and (min-width: 550px) and (max-width:850px) {
+
+        @include navbar.small-tabletScreenOnly;
+
+        @include navbar.small-responsiveScreen;
+
+        @include navbar.connect(7rem, 5rem, 1.8rem, 13rem, 2rem, 0rem, 2rem);
+       
+    }
+
+
+    @media only screen and (max-width: 550px){
+
+        @include navbar.smartPhoneScreenOnly;
+
+        @include navbar.small-responsiveScreen;
+
+        @include navbar.connect(6rem, 5rem, 1.5rem, 11rem, 2rem, 0rem, 1.8rem);
+            
+    }
+        
+}
+
+
+@mixin navigation-dropdown-forBigScreen {
+
+    @media only screen and (min-width:1330px) {
+
+        @include navbar.bigScreen-dropDown;
+
+        .header__dropdown {
+            &--aboutUs {
+                left: 6.1rem;
+            }
+
+            &--services {
+                left: 20.4rem;
+            }
+
+            &--newsNotice {
+                left: 27.7rem;
+            }
+
+            &--downloads {
+                left: 38.5rem;
+            }
+        }
+    }
+
+
+    @media only screen and (min-width: 1110px) and (max-width: 1330px) {
+
+        @include navbar.bigScreen-dropDown;
+
+        .header__dropdown {
+            &--aboutUs {
+                left: 4.1rem;
+            }
+
+            &--services {
+                left: 15.3rem;
+            }
+
+            &--newsNotice {
+                left: 21rem;
+            }
+
+            &--downloads {
+                left: 29.8rem;
+            }
+        }
+    }
+
+    
+}
+
+
+
+@mixin navigation-dropdown-forSmallScreen {
+
+    @media only screen and (min-width:850px) and (max-width: 1110px) {
+
+        @include navbar.smallScreen-dropDown;
+
+        @include navbar.smallScreen-dropDown-changeables();
+
+        @include navbar.tabPhone-dropDown();
+
+    }
+
+    @media only screen and (min-width:550px) and (max-width: 850px) {
+
+        @include navbar.smallScreen-dropDown;
+
+        @include navbar.smallScreen-dropDown-changeables(5rem, 1.8rem 60rem 1.8rem 0, 1rem);
+
+        @include navbar.tabPhone-dropDown(19.9rem, 24.5rem, 14.7rem, 19.9rem);
+
+    }
+
+    @media only screen and (max-width: 550px) {
+
+        @include navbar.smallScreen-dropDown;
+
+        @include navbar.smallScreen-dropDown-changeables(4.1rem, 1.5rem 60rem 1.5rem 0, 0.9rem);
+
+        @include navbar.tabPhone-dropDown(16.5rem, 20.3rem, 12.3rem, 16.5rem);
+
+    }
+
+}
+
+
+
+@mixin responsive-hamburger {
+    @media only screen and (max-width: 850px) {
+        @include hamburger.hamburger(1.4rem, 0.15rem, 1.4rem, 0.15rem, 0.4rem, 1.4rem, 0.15rem, -0.4rem,);
+    }
+
+    @media only screen and (max-width: 550px) {
+        @include hamburger.hamburger(1.1rem, 0.11rem, 1.1rem, 0.11rem, 0.3rem, 1.1rem, 0.11rem, -0.3rem,);
+    }
+}
+
+// ==================================== NAVIGATION & DROPDOWN ======================================================
+
+
+
+
+
+
+
+
+// ==================================== HERO SECTION ======================================================
+
+
+@mixin hero-section {
+
+    @media only screen and (min-width: 550px) and (max-width: 1330px) {
+        .header {
+            position: relative;
+            z-index: 100;
+        }
+
+        .hero {
+
+            @include mixins.hero-text (1.8rem, 3.5rem, 2.5rem, 2.5rem, 2rem, 1.2rem);
+
+            @include button.buttons (.5rem 1.3rem, .9rem);
+
+        }
+
+    }
+
+    @media only screen and (max-width: 550px) {
+
+        .header {
+            position: relative;
+            z-index: 100;
+        }
+        
+        .hero {
+            height: 100vh;
+            background-image: url(../../Images/Images/HomePage/Slider/Mobile/mobile_slider1.jpg);
+
+            &__layer {
+                background-color: rgba(#000, .4);
+            }
+        
+            &__text {
+                top: 54%; 
+                align-items: center;
+                padding-right: .9rem;
+                width: 100%;
+            }
+        
+            &__mainText {
+                align-items: center;
+                margin-bottom: 1.8rem;
+        
+                &-in {
+                    line-height: 3rem;
+                    font-size: 2rem;
+                }
+            }
+        
+            &__subText {
+                align-items: center;
+                margin-bottom: 2.5rem;
+                
+        
+                &-in {
+                    line-height: 1.8rem;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 350px) {
+
+        .hero {
+
+            &__text {
+                top: 48%
+            }
+
+            &__mainText{
+                margin-bottom: 1.3rem;
+
+                &-in {
+                    font-size: 1.8rem;
+                }
+            }
+
+            &__subText {
+                margin-bottom: 2.1rem;
+
+                &-in {
+                    font-size: 1rem;
+                }
+            }
+
+            @include button.buttons (.4rem 1.15rem, .75rem);
+
+        }
+    }
+}
+
+
+
+// ==================================== HERO SECTION ======================================================
+
+
+@mixin cards {
+    @media only screen and (min-width: 850px) and (max-width:1330px) {
+        
+        .explore {
+            margin-top: variables.$sectionLMT;
+        
+            &__heading {
+                font-size: variables.$sectionHeadingFont-L;
+                margin-bottom: variables.$sectionHeadLMB;
+            }
+        
+            &__cards {
+                padding: 3.5rem 0;
+            }
+        
+            &__product {
+                width: 39.5rem;
+                padding: .75rem 1rem;
+                margin: .7rem 0;
+                border-radius: 1.3rem;
+            }
+        
+            &--product2 {
+                width: 19rem;
+                padding: .8rem;
+            }
+        
+            &__product-hr {
+                width: 39.5rem;
+            }
+        
+            &__p-img {
+                box-shadow: 1px 3px 7px rgba(#000, .5) ;
+            }
+        
+            &--p1-img {
+                width: 20.5rem;
+            }
+        
+            &--p2-img {
+                width: 17.35rem;
+            }
+        
+            &--p1-info {
+                padding: 1.1rem 0.6rem;
+            }
+        
+            &--p2-info {
+                padding: 1.4rem .5rem;
+                height: 11.5rem;
+            }
+        
+            &__p-head {
+                font-size: variables.$articleHeadingFont-L;
+            }
+        
+            &__p-brief {
+                line-height: 1.4rem;
+                font-size: variables.$articleParaFont-L;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 550px) and (max-width:850px) {
+        .explore {
+            margin-top: variables.$sectionMMT;
+        
+            &__heading {
+                font-size: variables.$sectionHeadingFont-M;
+                margin-bottom: variables.$sectionHeadMMB;
+            }
+        
+            &__cards {
+                padding: 3.5rem 0;
+            }
+        
+            &__product {
+                width: 20rem;
+                padding: .8rem;
+                margin: .7rem 0;
+                border-radius: 1.3rem;
+                flex-direction: column;
+            }
+        
+            &__product-hr {
+                width: 20rem;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            &--p1-img {
+                width: 277.6px;
+                height: 254.733px;
+            }
+        
+            &--p2-img {
+                width: 17.35rem;
+            }
+        
+            &__p-info {
+                padding: 1.4rem .5rem;
+                height: 11.5rem;
+            }
+        
+            &__p-head {
+                font-size: variables.$articleHeadingFont-M;
+            }
+        
+            &__p-brief {
+                line-height: 1.4rem;
+                font-size: variables.$articleParaFont-M;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        .explore {
+            margin-top: variables.$sectionSMT;
+        
+            &__heading {
+                font-size: variables.$sectionHeadingFont-S;
+                margin-bottom: variables.$sectionHeadSMB;
+            }
+        
+            &__cards {
+                padding: 2.8rem 0;
+            }
+        
+            &__product {
+                width: 18rem;
+                padding: .7rem;
+                margin: .7rem 0;
+                border-radius: 1.1rem;
+                flex-direction: column;
+            }
+        
+            &__product-hr {
+                width: 18rem;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            &--p1-img {
+                width: 264px;
+                height: 242.264px;
+            }
+        
+            &--p2-img {
+                width: 16.5rem;
+            }
+        
+            &__p-info {
+                padding: 1.2rem .4rem;
+                height: 9.5rem;
+            }
+        
+            &__p-head {
+                font-size: variables.$articleHeadingFont-S;
+            }
+        
+            &__p-brief {
+                line-height: 1.1rem;
+                font-size: variables.$articleParaFont-S;
+            }
+        }
+    }
+}
+
+
+@mixin about {
+    .who {
+        @include mixins.section-heading;
+    }
+
+    @media only screen and (max-width: 550px) {
+        .who {
+            &__main {
+                height: 35rem;
+            }
+
+            &__about {
+                max-width: 90%;
+                padding: 1rem 2rem;
+            }
+
+            &__abt-head {
+                font-size: 1em;
+                margin-bottom: 1rem;
+            }
+
+            &__glance {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+
+            &__brief {
+                font-size: variables.$articleParaFont-S;
+                line-height: 1.4rem;
+                letter-spacing: 0.3px;
+                margin-bottom: 1rem;
+            }
+
+            @include button.buttons (.25rem 0rem, .8rem, .5);
+        }
+    }
+}
+
+
+@mixin message {
+
+    .message {
+        @include mixins.section-heading;
+    }
+
+    @media only screen and (min-width: 550px) and (max-width:850px) {
+    
+        .message {
+            &__grp {
+                margin-bottom: 8rem;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+        
+            &__img-box {
+                width: 70%;
+                margin-bottom: 3rem;
+            }
+        
+            &__content-box {
+                width: 100%;
+                padding-left: 0rem;
+            }
+
+            &__grp:nth-child(2) {
+                flex-direction: column-reverse;
+            }
+        
+            &__grp:nth-child(2) .message__content-box {
+                padding-right: 0rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width:550px) {
+    
+        .message {
+            &__grp {
+                margin-bottom: 3rem;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+        
+            &__img-box {
+                width: 70%;
+                margin-bottom: 1.5rem;
+                height: 12rem;
+            }
+
+            &__img {
+                width: 60%; 
+            }
+        
+            &__content-box {
+                width: 90%;
+                padding-left: 0rem;
+                font-size: variables.$articleParaFont-S;
+            }
+
+            &__grp:nth-child(2) {
+                flex-direction: column-reverse;
+            }
+        
+            &__grp:nth-child(2) .message__content-box {
+                padding-right: 0rem;
+            }
+        
+            &__para {
+                height: auto;
+            }
+            
+            &__content {
+                line-height: 1.5rem;
+                letter-spacing: .5px;
+            }
+        
+            &__readMore {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@mixin investor {
+
+    .investor {
+        @include mixins.section-heading;
+    }
+
+    @media only screen and (min-width:850px) and (max-width: 1110px) {
+        .investor {
+
+            &__main {
+                height: 20rem;
+            }
+
+            &__container {
+                padding: 3rem 0;
+            }
+
+            &__reportHead {
+                font-size: variables.$articleHeadingFont-L+.3rem;
+                margin-bottom: .8rem;
+            }
+
+        }
+    }
+
+    @media only screen and (min-width: 550px) and (max-width:850px) {
+    
+        .investor {
+
+            &__main {
+                height: 17rem;
+            }
+
+            &__container {
+                padding: 3rem 0;
+            }
+
+            &__reportHead {
+                font-size: variables.$articleHeadingFont-M;
+                margin-bottom: .7rem;
+            }
+
+            @include button.buttons (.3rem 1.6rem, .7rem, .5);
+
+        }
+    }
+
+    @media only screen and (max-width:550px) {
+    
+        .investor {
+
+            &__main {
+                height: 12rem;
+                background-size: 150%;
+            }
+
+            &__container {
+                padding: 1.5rem 0;
+            }
+
+            &__reportHead {
+                font-size: variables.$articleHeadingFont-S;
+                margin-bottom: .5rem;
+            }
+
+            @include button.buttons (.25rem 1.2rem, .6rem, .5);
+
+        }
+    }
+}
+
+
+
+@mixin news {
+
+    .news {
+        @include mixins.section-heading;
+    }
+
+    @media only screen and (min-width: 550px) and (max-width:850px) {
+        .news {
+
+            &__container {
+                max-width: 65%;
+                align-items: center;
+            }
+        
+            &__heading {
+                font-size: variables.$sectionHeadingFont-M;
+                margin-bottom: variables.$sectionHeadMMB;
+            }
+
+            &__main {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            &__card {
+                max-width: 100%;
+                padding: 4% 9%;
+            }
+
+            &__card:first-child {
+                margin-bottom: 2rem;
+            }
+        
+            &__newsimg {
+                margin-bottom: .6rem;
+                width: 100%;
+            }
+        
+            &__newsHead {
+                font-size: variables.$articleHeadingFont-M;
+                line-height: 1.8rem;
+                align-self: center;
+            }
+        
+            &__brief {
+                font-size: variables.$articleParaFont-M;
+                line-height: 1.8rem;
+                margin-bottom: .7rem;
+            }
+
+            &__button {
+                align-self: stretch;
+            }
+        
+            @include button.readmore(.9em);
+        
+            @include button.buttons (.7rem 35%, .7rem, .5);
+        }
+    }
+
+    @media only screen and (max-width:550px) {
+        .news {
+
+            &__container {
+                align-items: center;
+            }
+        
+            &__heading {
+                font-size: variables.$sectionHeadingFont-S;
+                margin-bottom: variables.$sectionHeadSMB;
+            }
+
+            &__main {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+        
+            &__card {
+                max-width: 100%;
+                padding: 4% 9%;
+            }
+
+            &__card:first-child {
+                margin-bottom: 1rem;
+            }
+        
+            &__newsimg {
+                margin-bottom: .6rem;
+                width: 100%;
+            }
+        
+            &__newsHead {
+                font-size: variables.$articleHeadingFont-S;
+                line-height: 1.8rem;
+                align-self: center;
+            }
+        
+            &__brief {
+                font-size: variables.$articleParaFont-S;
+                line-height: 1.8rem;
+                margin-bottom: .7rem;
+            }
+
+            &__button {
+                align-self: center;
+            }
+        
+            @include button.readmore(.8em);
+        
+            @include button.buttons (.3rem 25%, .8rem, .5);
+        }
+    }
+}
+
+
+
+@mixin footer-social {
+    @media only screen and (max-width: 1110px) {
+            margin-top: variables.$sectionLMT;
+        
+            &__heading {
+                font-size: variables.$sectionHeadingFont-L;
+                margin-bottom: variables.$sectionHeadLMB - 1rem;
+            }
+
+            &__socialTitle {
+                font-size: 1.3em;
+                max-width: 50%;
+                line-height: 2rem;
+            }
+        
+            &__social {
+                width: 40%;
+            }
+
+            &__socialLink img{
+                width: 3rem;
+            }
+        }
+
+    @media only screen and (max-width: 850px) {
+        margin-top: variables.$sectionMMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB - 1rem;
+        }
+
+        &__container {
+            padding: 2rem 0;
+        }
+
+        &__socialTitle {
+            font-size: 1em;
+            line-height: 1.6rem;
+        }
+    
+        &__social {
+            width: 45%;
+        }
+    
+        &__socialLink img{
+            width: 2rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB - .5rem;
+        }
+
+        &__container {
+            padding: 1rem 0;
+        }
+
+        &__socialTitle {
+            display: none;
+        }
+    
+        &__social {
+            width: 100%;
+            padding: 0 25%;
+        }
+    
+        &__socialLink img{
+            width: 1.5rem;
+        }
+    }
+}
+
+
+@mixin footer-top {
+    @media only screen and (min-width: 850px) and (max-width: 1110px) {
+
+        &__section:first-child {
+            width: 30%;
+        }
+    
+        &__heading {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+    
+        &__menu {
+            left: .8rem;
+        }
+    
+        &__menu::before {
+            left: -.8rem;
+        }
+    
+        &__list {
+            margin-bottom:1rem;
+            font-size: .7rem; 
+    
+            i {
+                margin-right: .4rem;
+            }
+        }
+    
+        &__link {
+            font-size: .7rem;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+    
+        &__top {
+            padding: 3rem 0 2rem 0;
+        }
+
+        &__section {
+            width: 20%;
+        }
+
+        &__section:first-child {
+            width: 30%;
+        }
+    
+        &__heading {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+    
+        &__menu {
+            left: .7rem;
+        }
+    
+        &__menu::before {
+            left: -.7rem;
+        }
+    
+        &__list {
+            margin-bottom:.8rem;
+            font-size: .7rem; 
+    
+            i {
+                margin-right: .4rem;
+            }
+        }
+    
+        &__link {
+            font-size: .7rem;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        &__top {
+            padding: 2rem 0 1rem 0;
+        }
+
+        &__heading {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        &__container {
+            padding-left: 1rem;
+        }
+
+        &__section {
+            width: 100%;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+            padding-left: 2rem;
+
+            &:first-child {
+                align-self: flex-start;
+                width: 100%;
+
+                li {
+                    font-size: .85rem;
+                }
+            }
+        }
+
+        &__link {
+            font-size: .9rem;
+        }
+    }
+}
+
+
+
+@mixin footer-bottom {
+    @media only screen and (max-width: 850px) {
+    
+        &__logo {
+            margin-bottom: 1.3rem;;
+        }
+    
+        &__logoImg {
+            width: 6rem;
+        }
+    
+        &__logoText {
+            font-size: 1rem;
+            margin-left: .7rem;
+            width: 11rem;
+        }
+
+        &__copy {
+            font-size: .8rem;
+        }
+    
+        &__copyright {
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+
+
+
+
+
+// ==================================== INNER HERO ======================================================
+@mixin inner-hero {
+    @media only screen and (max-width: 1110px) {
+        height: 60vh;
+    
+        &__mainText {
+            height: 35vh;
+        }
+    
+        &__heading {
+            font-size: 3rem;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        height: 50vh;
+    
+        &__breadcrum {
+            padding: .4rem 0;
+        }
+    
+        &__bcText {
+            font-size: .9rem;
+        }
+    
+        &__bcSpan1 {
+            margin-right: .6rem;
+        }
+    
+        &__bcSpan2 {
+            margin-left: .6rem;
+        }
+    
+        &__mainText {
+            height: 30vh;
+        }
+    
+        &__heading {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        height: 16rem;
+    
+        &__breadcrum {
+            padding: .3rem 0;
+        }
+    
+        &__bcText {
+            font-size: .7rem;
+        }
+    
+        &__bcSpan1 {
+            margin-right: .5rem;
+        }
+    
+        &__bcSpan2 {
+            margin-left: .5rem;
+        }
+    
+        &__mainText {
+            height: 9rem;
+        }
+    
+        &__heading {
+            font-size: 1.3rem;
+        }
+    }
+}
+// ==================================== INNER HERO ======================================================
+
+
+
+
+
+
+// ==================================== WHO ABOUT======================================================
+
+@mixin who-abt {
+    @media only screen and (max-width: 550px) {
+        padding-top: 1rem;
+    
+        &__para {
+            width: 90%;
+            padding: 1rem 1.5rem;
+            line-height: 1.8rem;
+            font-size: .9rem;
+        }
+    
+        &__para1 {
+            margin-bottom: 1.5rem;        }
+    }
+}
+
+// ==================================== WHO ABOUT======================================================
+
+
+
+
+
+
+
+
+
+
+// ==================================== WHO VISION======================================================
+
+@mixin vision {
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__inner {
+            max-width: 90%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    
+        &__para {
+            padding: 1rem 1.5rem;
+            line-height: 1.8rem;
+            font-size: .9rem;
+            margin-bottom: 1rem;
+        }
+    
+        &__para1 {
+            margin-bottom: 1.5rem;
+        }
+    
+        @include button.buttons(.5rem 0, .8rem, .5);
+    }
+}
+
+// ==================================== WHO VISION======================================================
+
+
+
+
+
+
+
+
+// ==================================== BOD-MGMT======================================================
+
+@mixin bod-mgmt {
+    @media only screen and (max-width: 1280px) {
+    
+        &__person {
+            width: 25rem;
+            padding: 1.5rem 1rem;
+        }
+    
+        &__imgWrapper {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &__img {
+            width: 10.6rem;
+        }
+    
+        &__name {
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+        }
+    
+        &__designation {
+            font-size: .9rem;
+        }
+    }
+
+    @media only screen and (max-width: 1050px) {
+
+        margin-top: variables.$sectionMMT;
+
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+
+        &__wrapper {
+            justify-content: center;
+        }
+
+        &__person:nth-last-child(2) {
+            margin-bottom: 8rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+
+        &__person {
+            width: 20rem;
+            padding: .8rem .8rem;
+            margin-bottom: 4rem;
+            border-radius: 2.5rem;
+
+            &:nth-last-child(2) {
+                margin-bottom: 4rem;
+            }
+        }
+    
+        &__imgWrapper {
+            width: 8rem;
+            height: 8rem;
+        }
+
+        &__img {
+            width: 8.4rem;
+        }
+    
+        &__name {
+            font-size: 1rem;
+            margin-bottom: .4rem;
+        }
+    
+        &__designation {
+            font-size: .7rem;
+        }
+    }
+}
+
+// ==================================== BOD-MGMT======================================================
+
+
+
+
+
+
+
+
+
+// ==================================== CAREERS ======================================================
+@mixin career {
+    @media only screen and (max-width: 1110px) {
+        margin-top: variables.$sectionLMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+    
+        &__jobs {
+            border-radius: 8rem;
+            padding: 1.5rem 4rem;
+            margin-bottom: 8rem;
+        }
+    
+        &__job-head {
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        margin-top: variables.$sectionMMT;
+
+        &__container {
+            max-width: 90%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+    
+        &__jobs {
+            border-radius: 6rem;
+            padding: 1.3rem 3.5rem;
+            margin-bottom: 5rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+
+        &__container {
+            max-width: 95%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    
+        &__jobs {
+            border-radius: 2rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 4rem;
+        }
+    
+        &__job-head {
+            font-size: 1rem;
+            line-height: 1.8rem;
+            margin-bottom: .8rem;
+        }
+
+        &__job-date {
+            font-size: .6rem;
+            margin-bottom: .4rem;
+        }
+    
+        &__job-address {
+            font-size: .6rem;
+    
+            i {
+                margin-right: .2rem;
+            }
+        }
+    }
+}
+
+// ==================================== CAREERS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== LOANS & DEPOSIT ======================================================
+@mixin loans-deposits {
+    @media only screen and (max-width: 1110px) {
+        margin-top: variables.$sectionLMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+    
+        &__product {
+            width: 18rem;
+            height: 7.5rem;
+            padding: 0 1rem;
+            margin-bottom: 6rem;
+        }
+    
+        &__product-name {
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        margin-top: variables.$sectionMMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+    
+        &__wrapper {
+            justify-content: center;
+        }
+    
+        &__product:nth-last-child(2) {
+            margin-bottom: 6rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    
+        &__container {
+            width: 95%;
+        }
+    
+        &__product {
+            width: 18rem;
+            height: 7rem;
+            margin-bottom: 5rem;
+    
+            &:nth-last-child(2) {
+                margin-bottom: 5rem;
+            }
+        }
+
+        &__product-name {
+            font-size: 1.1rem;
+            line-height: 2.2rem;
+        }
+    }
+}
+
+// ==================================== LOANS & DEPOSIT ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== NEWS & STORIES ======================================================
+
+@mixin news-stories {
+    @media only screen and (max-width: 1110px) {
+        margin-top: variables.$sectionLMT;
+    
+        &__container {
+            max-width: 80%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+    
+        &__main {
+            margin-bottom: 3rem;
+        }
+    
+        &__wrapper {
+            margin-bottom: 7rem;
+        }
+    
+        &__img-wrapper {
+            padding: 1.5rem 1.5rem;
+        }
+
+        &__img {
+            width: 13rem;
+        }
+    
+        &__content-heading {
+            font-size: .8rem;
+            line-height: 1.5rem;
+            margin-bottom: .8rem;
+        }
+    
+        &__para {
+            font-size: .8rem;
+            line-height: 1.5rem;
+            margin-bottom: .8rem;
+        }
+    
+        @include button.readmore(.8rem);
+    
+        @include button.buttons(.4rem 0, .8rem, .5);
+    }
+
+    @media only screen and (max-width: 600px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__container {
+            max-width: 90%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    
+        &__main {
+            margin-bottom: 1.5rem;
+        }
+    
+        &__wrapper {
+            margin-bottom: 3rem;
+            flex-direction: column;
+        }
+
+        &__wrapper:nth-child(even) {
+            flex-direction: column;
+    
+            .news__img-wrapper {
+                align-self: center;
+            }
+        }
+
+        &__img-container {
+            width: 100%;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+    
+        &__img-wrapper {
+            padding: 1rem 1rem;
+        }
+
+        &__content-container {
+            width: 100%;
+        }
+
+        &__content-inner {
+            max-width: 15rem;
+        }
+
+        &__button {
+            max-width: 15rem;
+        }
+    
+        @include button.readmore(.6rem);
+    }
+
+
+}
+// ==================================== NEWS & STORIES ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== NOTICE ======================================================
+@mixin notice {
+    @media only screen and (max-width: 1110px) {
+        margin-top: variables.$sectionLMT;
+    
+        &__container {
+            max-width: 70%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        margin-top: variables.$sectionMMT;
+    
+        &__container {
+            max-width: 85%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+    
+        &__note-head {
+            font-size: variables.$articleHeadingFont-M;
+            margin-bottom: 1.2rem;
+        }
+    
+        &__note-date {
+            font-size: .7rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__container {
+            max-width: 90%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    
+        &__main {
+            margin-bottom: 1.5rem;
+        }
+    
+        &__note {
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            margin-bottom: 3rem;
+        }
+    
+        &__note-head {
+            font-size: variables.$articleHeadingFont-S;
+            margin-bottom: 1rem;
+        }
+    
+        &__note-date {
+            font-size: .6rem;
+        }
+    
+        @include button.buttons(.4rem 0, .8rem, .5);
+    }
+}
+
+// ==================================== NOTICE ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== DOWNLOADS ======================================================
+@mixin downloads {
+    @media only screen and (max-width: 1110px) {
+        margin-top: variables.$sectionLMT;
+    
+        &__container {
+            max-width: 75%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+
+        &__card {
+            padding: 2rem 3rem;
+        }
+
+        &__card-head {
+            max-width: 75%;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        margin-top: variables.$sectionMMT;
+    
+        &__container {
+            max-width: 85%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+
+        &__card {
+            padding: 1.5rem 2rem;
+            border-radius: 1.5rem;
+        }
+    
+        &__card-head {
+            font-size: variables.$articleHeadingFont-M;
+        }
+    
+        &__card-download {
+            font-size: .7rem;
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__container {
+            max-width: 95%;
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    
+        &__main {
+            margin-bottom: 1.5rem;
+        }
+    
+        &__card {
+            padding: 1rem 1.5rem;
+            margin-bottom: 3rem;
+            border-radius: 1rem;
+        }
+    
+        &__card-head {
+            font-size: variables.$articleHeadingFont-S - .2rem;
+            line-height: 1.8rem;
+        }
+    
+        &__card-download {
+            font-size: .6rem;
+        }
+    
+        @include button.buttons(.4rem 0, .8rem, .5);
+    }
+}
+// ==================================== DOWNLOADS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================== CONTACT US ======================================================
+
+@mixin contact {
+    @media only screen and (max-width: 1110px) { 
+        margin-top: variables.$sectionLMT;
+    
+        &__container {
+            width: 75%;
+    
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        margin-top: variables.$sectionMMT;
+    
+        &__container {
+            width: 85%;
+    
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+
+        &__main {
+            padding: 1.5rem 0;
+        }
+
+        &__top-text {
+            margin-bottom: 2rem;
+        }
+    
+        &__text {
+            font-size: .8rem;
+            line-height: 1.5rem;
+        }
+    
+        &__request {
+            font-size: .8rem;
+            line-height: 1.5rem;
+        }
+
+        &__tb {
+            margin-bottom: 2rem;
+
+            input {
+                width: 15rem;
+            }
+        }
+
+        &__fill-name {
+            margin-bottom: .8rem;
+        }
+    }
+
+    @media only screen and (max-width: 580px) {
+        margin-top: variables.$sectionSMT;
+    
+        &__container {
+            width: 95%;
+    
+        }
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+
+        &__text {
+            line-height: 1.3rem;
+        }
+
+        &__form {
+            align-items: center;
+        }
+
+        &__tb {
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+        }
+
+        &__fill {
+            width: 100%;
+            
+            &:first-child {
+                margin-bottom: 2rem;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+
+        &__message {
+            margin-bottom: 1.5rem;
+            flex-direction: column;
+            width: 80%;
+
+            // &-name {
+            //     align-self: flex-start;
+            // }
+
+            // textarea {
+            //     width: 100%;
+            //     display: block;
+            //     margin: auto;
+
+            // }
+        }
+
+        @include button.buttons(.4rem 1.5rem, .8rem, .5);
+    }
+}
+// ======================================== CONTACT US ======================================================

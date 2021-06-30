@@ -1,0 +1,231 @@
+@use 'components/header';
+@use 'abstracts/utilities';
+@use 'abstracts/media-query';
+@use 'abstracts/colors';
+@use 'abstracts/mixins';
+@use 'components/button';
+@use 'abstracts/variables';
+@use 'components/footer';
+@use 'components/inner-hero';
+
+
+
+
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+@include utilities.universal; 
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HEADER ======================================================
+
+@include header.header;
+
+// ==================================== HEADER ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HERO ======================================================
+
+.hero {
+    background-image: url(../Images/Images/Contact/contact_1.jpg);
+    @include inner-hero.inner-hero;
+}
+
+// ==================================== HERO ======================================================
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== CONTACT US ======================================================
+
+
+.contact {
+    width: 100%;
+    margin-top: variables.$sectionXMT;
+
+    &__container {
+        width: 60%;
+        margin: auto;
+
+    }
+
+    &__heading {
+        font-size: variables.$sectionHeadingFont-X;
+        text-align: center;
+        margin-bottom: variables.$sectionHeadXMB;
+        text-transform: capitalize;
+    }
+
+    &__main {
+        background-color: #D9EFE3;
+        padding: 3rem 0;
+    }
+
+    &__top-text {
+        margin-bottom: 4rem;
+    }
+
+    &__text {
+        line-height: 2.2rem;
+    }
+
+    &__request {
+        text-transform: uppercase;
+        line-height: 2rem;
+    }
+
+    &__form {
+        flex-direction: column;
+    }
+
+    &__tb {
+        margin-bottom: 4rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__fill {
+        display: flex;
+        flex-direction: column;
+
+        &-name {
+            text-transform: capitalize;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            width: 18rem;
+            padding: 0 .2rem;
+            border: none;
+            border-bottom: 1px solid rgb(112, 111, 111);
+            background-color: #D9EFE3;
+            outline: none;
+            font-size: 1rem;
+        }
+    }
+
+    &__message {
+        flex-direction: column;
+        margin-bottom: 3rem;
+
+        &-name {
+            text-transform: capitalize;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        textarea {
+            border: 1px solid rgb(185, 185, 185);
+            background-color: #E8F3ED;
+            box-shadow: 1px 3px 10px rgb(160, 158, 158);
+            outline: none;
+            padding: .2rem;
+            font-size: 1rem;
+            font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+        }
+    }
+
+    &__button {
+        border: none;
+        color: colors.$white;
+        cursor: pointer;
+        align-self: center;
+    }
+
+    @include button.buttons(.6rem 2rem, 1rem, .5);
+
+    @include media-query.contact;   
+}
+// ==================================== CONTACT US ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== LOCATE US ======================================================
+.locate {
+    width: 100%;
+    margin-top: variables.$sectionXMT;
+
+    &__heading {
+        font-size: variables.$sectionHeadingFont-X;
+        text-align: center;
+        margin-bottom: variables.$sectionHeadXMB;
+        text-transform: capitalize;
+    }
+}
+
+
+// ==================================== LOCATE US ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================================== FOOTER ======================================================
+
+@include footer.footer;
+
+// ========================================== FOOTER ======================================================

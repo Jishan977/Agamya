@@ -1,0 +1,506 @@
+@use 'logo';
+@use '../abstracts/mixins';
+@use "../abstracts/colors";
+
+
+
+
+
+@mixin navbar ($navbarPadding-y: 0.7rem) {
+    &__logoNavigation {
+        padding: $navbarPadding-y 0;
+        background-color: rgba(#000, 0.8);
+    }
+}
+
+
+
+
+@mixin nav-largeScreenOnly {
+    &__navigation {
+        display: block;
+    }
+
+    &__hamburger {
+        display: none;
+    }
+
+    &__navigationList {
+        position: relative;
+    }
+}
+
+
+@mixin nav-smallLargeScreenOnly {
+
+    &__navigationLink {
+        padding: 2rem 0.75rem;
+        font-size: 0.95rem;
+
+        i {
+            font-size: 0.6rem;
+            margin-left: 0.25rem;
+        }
+
+        &--active {
+            transform: scale(1.18);
+            font-weight: 600;
+            text-shadow: 0 1px 10px #fff;
+        }
+
+        &:hover {
+            transform: scale(1.18);
+            font-weight: 600;
+            text-shadow: 0 1px 10px #fff;
+        }
+    }
+
+    &__navigationList {
+        position: relative;
+    }
+
+    &__hamburger {
+        display: none;
+    }
+}
+
+
+
+
+
+@mixin nav-bigscreen () {
+
+    &__navigationList {
+        max-width: 900px;
+    }
+
+    &__mainNav {
+        overflow: hidden;
+        height: 83.2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__navigationLink {
+        color: #fff;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 1rem;
+        padding: 2rem 1.5rem;
+        white-space: nowrap;
+        transition: 100ms linear;
+        transition-property: transform, font-weight, text-shadow;
+
+        i {
+            font-size: 0.6rem;
+            margin-left: 0.25rem;
+        }
+
+        &--active {
+            transform: scale(1.35);
+            font-weight: 600;
+            text-shadow: 0 1px 10px #fff;
+        }
+
+        &:hover {
+            transform: scale(1.35);
+            font-weight: 600;
+            text-shadow: 0 1px 10px #fff;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@mixin big-tabletScreenOnly {
+    &__navigationList {
+        top: 6.35rem; 
+    }
+    &__mainNav {
+        height: 5.3rem;
+    }
+    &__navigationLink {
+        padding: 2rem 60rem 2rem 0;
+    }
+    &--active{
+        font-size: 1.2rem;
+        padding-bottom: 1.85rem;
+    }
+}
+
+@mixin small-tabletScreenOnly {
+    &__navigationList {
+        top: 5.45rem;
+    }
+    &__mainNav {
+        height: 5rem;
+    }
+    &__navigationLink {
+        padding: 1.8rem 60rem 1.8rem 0;
+        font-size: 1rem;
+    }
+    &--active{
+        font-size: 1.1rem; 
+        padding-bottom: 1.25rem; 
+    }
+}
+
+@mixin smartPhoneScreenOnly {
+    &__navigationList {
+        top: 4.75rem;
+    }
+    &__mainNav {
+        height: 4.1rem;
+    }
+    &__navigationLink {
+        padding: 1.5rem 60rem 1.5rem 0;
+        font-size: 0.9rem;
+    }
+    &--active{
+        font-size: 1.1rem;
+        padding-bottom: 1.25rem;
+    }
+}
+
+
+
+
+@mixin small-responsiveScreen {
+    &__navigationList {
+        display: block;
+    }
+
+    &__hamburger {
+        display: block;
+    }
+
+    &__dropdown {
+        display: block;
+    }
+
+    &__navPosition {
+        position: relative;
+    }
+
+    &__navigationList {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background-color: rgba(#000, 0.8);
+        width: 100%;
+        padding: 0 10% 0 10%;
+        transform: translateX(100%);
+        transition: transform 0.5s linear;
+    }
+
+    &__toggleNav {
+        transform: translateX(0%);
+    }
+
+    &__mainNav {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: hidden;
+        transition: height 0.6s linear;
+
+        &:last-child .header__navigationLink {
+            border-bottom: none;
+        }
+    }
+
+    &__navigationLink {
+        text-decoration: none;
+        color: colors.$white;
+        white-space: nowrap;
+        text-transform: capitalize;
+        border-bottom: 1px solid rgba(#fff, 0.3);
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+
+        i {
+            font-size: 0.6rem;
+            margin-left: 0.25rem; 
+        }
+
+        &--active {
+            font-weight: 600;
+            text-shadow: 0 1px 10px #fff;
+        }
+    }
+
+    &__toggleOpacity {
+        opacity: 1;
+    }
+}
+
+
+
+
+@mixin bigScreen-dropDown {
+    .header{
+
+        &__dropdown {
+            position: absolute;
+            top: 90%;
+            background-color: rgba(#000, .8);
+            max-width: 12rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.1s linear;
+            transition-delay: 50ms;
+        }
+    
+        &__mainNav--dropdown:hover .header__dropdown {
+            visibility: visible;
+            opacity: 1;
+        }
+    
+        &__subNav {
+            max-width: 11.5rem;
+            max-height: 3rem;
+            border: 1px solid rgba(#fff, .15);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        &__subNavLink {
+            text-decoration: none;
+            color: colors.$white;
+            background-color: rgba(#000, .5);
+            padding: 1rem 5rem 1rem 5rem;
+            white-space: nowrap;
+            font-size: .9rem;
+            transition: 100ms linear;
+            transition-property: transform, font-weight, text-shadow;
+    
+            &:hover {
+                transform: scale(1.18);
+                font-weight: 600;
+                text-shadow: 0 1px 10px #fff;
+            }
+        }
+
+        &__subNavLink--active {
+            transform: scale(1.18);
+            font-weight: 600;
+            text-shadow: 0 1px 10px #fff;
+        }
+    }
+}
+
+
+
+
+
+
+
+// =====================TABLET AND SMARTPHONE SCREEN DROPDOWN======================
+
+
+@mixin tabPhone-dropDown ($aboutUs: 21.3rem, $service: 26.4rem, $newsNotice: 16.8rem, $download: 21.3rem){
+
+    // largeTab-aboutUsDropDown-mainNavHeight
+    .lT-abUsDropDown-mNH {
+        height: $aboutUs;
+    }
+    .lT-serDropDown-mNH {
+        height: $service;
+    }
+    .lT-nNDropDown-mNH {
+        height: $newsNotice;
+    }
+    .lT-dolDropDown-mNH {
+        height: $download;
+    }
+}
+
+
+@mixin smallScreen-dropDown {
+    .header {
+        &__mainNav--dropdown {
+            position: relative;
+        }
+
+        &__dropdown {
+            position: absolute;
+            width: 100%;
+        }
+
+        &__subNav {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            overflow: hidden;
+            transition: height 0.4s linear;
+    
+            &:last-child .header__navigationLink {
+                border-bottom: none;
+            }
+        }
+
+        &__subNavLink {
+            text-decoration: none;
+            color: colors.$white;
+            border-bottom: 1px solid rgba(#fff, 0.3);
+            white-space: nowrap;
+        }
+
+        &__subNavLink--active {
+            text-shadow: 0 1px 10px #fff;
+        }
+    }
+}
+
+@mixin smallScreen-dropDown-changeables (
+    $height: 5.3rem, 
+    $padding: 2rem 60rem 2rem 0, 
+    $fontSize: 1rem){
+    .header {
+
+        &__dropdown {
+            left: 9%;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s linear;
+            transition-property: top opacity visibility;
+        }
+        &__dropdown--aboutUs {
+            top: 35%;
+        }
+        &__dropdown--services {
+            top: 25%;
+        }
+        &__dropdown--newsNotice {
+            top: 35%;
+
+        }
+        &__dropdown--downloads {
+            top: 32%;
+        }
+        &__dropdown--aboutUsUp {
+            top: 25.5%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &__dropdown--servicesUp {
+            top: 19%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &__dropdown--newsNoticeUp {
+            top: 33%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &__dropdown--downloadsUp {
+            top: 25.5%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &__subNav {
+            height: $height;
+        }
+        &__subNavLink {
+            padding: $padding;
+            font-size: $fontSize;
+        }
+    }
+}
+
+
+@mixin connect (
+    $connect-mt: 4rem,
+    $connect-mb: 5rem,    
+    $connectHead-fs: 2rem,
+    $social-width: 12rem,
+    $social-mt: 2rem,
+    $social-mr: 1rem,
+    $socialImg: 2rem,
+) {
+
+    &__connect {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: $connect-mt;
+        margin-bottom: $connect-mb;
+    }
+
+    &__connectHead {
+        font-size: $connectHead-fs;
+        color: colors.$white;
+    }
+
+    &__social {
+        display: flex;
+        width: $social-width;
+        justify-content: space-between;
+        margin-top: $social-mt;
+        margin-right: $social-mr;
+    }
+
+    &__socialLink:last-child {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: colors.$white;
+    }
+
+    &__socialLink img {
+        width: $socialImg;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

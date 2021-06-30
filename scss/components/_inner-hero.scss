@@ -1,0 +1,53 @@
+@use '../abstracts/colors';
+@use '../abstracts/media-query';
+
+
+
+@mixin inner-hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 70vh;
+
+    &__layer {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, .5);
+    }
+
+    &__breadcrum {
+        width: 100%;
+        padding: .5rem 0;
+        background-color: rgba(colors.$white, .8);
+    }
+
+    &__bcText {
+        text-transform: capitalize;
+        color: colors.$black;
+        font-size: 1rem;
+    }
+
+    &__bcSpan1 {
+        margin-right: .7rem;
+    }
+
+    &__bcSpan2 {
+        margin-left: .7rem;
+    }
+
+    &__mainText {
+        justify-content: center;
+        align-items: flex-end;
+        height: 40vh;
+    }
+
+    &__heading {
+        color: colors.$white;
+        text-transform: capitalize;
+        font-size: 3rem;
+    }
+
+    @include media-query.inner-hero;
+
+}

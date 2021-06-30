@@ -1,0 +1,18 @@
+@use '../abstracts/colors';
+
+@mixin logo ($logoText-margin: 0.3rem, $logoText-width: 9rem, $logoText-fontSize: .8rem, $logoText-lineHeight: 1.2rem, $logoImg-width: 5rem) {
+    &__logo {
+
+        &Text {
+            color: colors.$brand-color;
+            margin-left: $logoText-margin;
+            width: $logoText-width;
+            font-size: $logoText-fontSize;
+            line-height: $logoText-lineHeight;
+        }
+
+        &Img {
+            width: $logoImg-width;
+        }
+    }
+}

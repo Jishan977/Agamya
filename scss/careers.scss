@@ -1,0 +1,151 @@
+@use 'components/header';
+@use 'abstracts/utilities';
+@use 'abstracts/media-query';
+@use 'abstracts/colors';
+@use 'abstracts/mixins';
+@use 'components/button';
+@use 'abstracts/variables';
+@use 'components/footer';
+@use 'components/inner-hero';
+
+
+
+
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+@include utilities.universal; 
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HEADER ======================================================
+
+@include header.header;
+
+// ==================================== HEADER ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HERO ======================================================
+
+.hero {
+    background-image: url(../Images/Images/Career/careers_1.jpg);
+    @include inner-hero.inner-hero;
+}
+
+// ==================================== HERO ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== CAREER ======================================================
+
+.career {
+    margin-top: variables.$sectionXMT;
+
+    &__container {
+        max-width: 70%;
+    }
+
+    &__heading {
+        font-size: variables.$sectionHeadingFont-X;
+        text-align: center;
+        margin-bottom: variables.$sectionHeadXMB;
+        text-transform: capitalize;
+    }
+
+    &__main {
+        width: 100%;
+    }
+
+    &__jobs {
+        background-color: #F3E4E6;
+        box-shadow: -7px -7px 10px #f8f4f5, 7px 7px 16px rgba(#c2a5a9, .7);
+        border-radius: 10rem;
+        padding: 2rem 4rem;
+        margin-bottom: 8rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__job-head {
+        font-size: 1.5rem;
+        line-height: 2.6rem;
+        margin-bottom: 1rem;
+    }
+
+    &__job-date {
+        font-size: .8rem;
+        margin-bottom: .5rem;
+    }
+
+    &__job-address {
+        font-size: .8rem;
+
+        i {
+            margin-right: .3rem;
+        }
+    }
+
+    @include media-query.career;
+}
+
+// ==================================== CAREER ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================================== FOOTER ======================================================
+
+@include footer.footer;
+
+// ========================================== FOOTER ======================================================
+

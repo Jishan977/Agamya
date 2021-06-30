@@ -1,0 +1,39 @@
+@use '../abstracts/colors';
+
+
+@mixin buttons ($buttonPadding, $buttonFontSize, $buttonColorOp:0) {
+
+    &__button {
+        text-transform: capitalize;
+        background-color: colors.$brand-color;
+        padding: $buttonPadding;
+        font-size: $buttonFontSize;
+        font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+        box-shadow: 1px 3px 7px rgba(#000, $buttonColorOp);
+        border-radius: .1rem;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background-color: colors.$brand-colorLight;
+            color: colors.$off-white;
+        }
+    }
+
+}
+
+
+@mixin readmore ($rm-fs: 1rem) {
+
+    &__readMore {
+        color: colors.$brand-color;
+        text-decoration: underline;
+        font-size: $rm-fs;
+        transition: all 0.2s linear;
+
+
+        &:hover {
+            text-decoration: none;
+            color: colors.$brand-colorLight;
+        }
+    }
+}

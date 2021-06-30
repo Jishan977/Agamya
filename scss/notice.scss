@@ -1,0 +1,161 @@
+@use 'components/header';
+@use 'abstracts/utilities';
+@use 'abstracts/media-query';
+@use 'abstracts/colors';
+@use 'abstracts/mixins';
+@use 'components/button';
+@use 'abstracts/variables';
+@use 'components/footer';
+@use 'components/inner-hero';
+
+
+
+
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+@include utilities.universal; 
+
+// ==================================== UNIVERSAL CSS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HEADER ======================================================
+
+@include header.header;
+
+// ==================================== HEADER ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== HERO ======================================================
+
+.hero {
+    background-image: url(../Images/Images/News_&_Notice/Notice/notice_1.jpg);
+    @include inner-hero.inner-hero;
+}
+
+// ==================================== HERO ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================== NOTICE ======================================================
+
+.notice {
+    width: 100%;
+    margin-top: variables.$sectionXMT;
+
+    &__container {
+        max-width: 60%;
+        margin: auto;
+    }
+
+    &__heading {
+        font-size: variables.$sectionHeadingFont-X;
+        text-align: center;
+        margin-bottom: variables.$sectionHeadXMB;
+        text-transform: capitalize;
+    }
+
+    &__main {
+        margin-bottom: 3rem;
+    }
+
+    &__note {
+        width: 100%;
+        padding: 2rem 4rem;
+        background-color: colors.$white;
+        box-shadow: -7px -7px 10px #ececec, 7px 7px 16px rgba(#b6b5b5, .7);
+        border-radius: 5rem;
+        margin-bottom: 7rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__note-head {
+        font-size: variables.$articleHeadingFont-X;
+        margin-bottom: 1.5rem;
+        text-transform: capitalize;
+    }
+
+    &__note-date {
+        font-size: .8rem;
+        text-transform: capitalize;
+    }
+
+    &__button {
+        display: block;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    @include button.buttons(.6rem 0, 1rem, .5);
+
+    @include media-query.notice;
+}
+// ==================================== NOTICE ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================================== FOOTER ======================================================
+
+@include footer.footer;
+
+// ========================================== FOOTER ======================================================

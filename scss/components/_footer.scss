@@ -1,0 +1,162 @@
+@use '../abstracts/variables';
+@use '../abstracts/colors';
+@use '../abstracts/media-query';
+
+
+
+@mixin footer {
+    // ========================================== FOOTER SOCIAL LINKS ======================================================
+    .fs {
+        margin-top: variables.$sectionXMT;
+
+        &__heading {
+            font-size: variables.$sectionHeadingFont-X;
+            text-align: center;
+            margin-bottom: variables.$sectionHeadXMB;
+            text-transform: capitalize;
+        }
+
+        &__container {
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 5rem;
+        }
+
+        &__socialTitle {
+            text-transform: capitalize;
+            font-size: 1.5em;
+        }
+
+        &__social {
+            width: 33%;
+        }
+
+        &__socialLink img{
+            width: 3rem;
+        }
+
+        @include media-query.footer-social;
+    }
+    // ========================================== FOOTER SOCIAL LINKS ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ========================================== FOOTER TOP ======================================================
+    .footer {
+        color: colors.$white;
+        background-color: #313030;
+
+        ul {
+            list-style-type: none;
+        }
+
+        &__container {
+            justify-content: space-between;
+        }
+
+        &__top {
+            padding: 4rem 0 3rem 0;
+        }
+
+        &__section {
+            width: 25%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__heading {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        &__menu {
+            position: relative;
+            left: 1rem;
+        }
+
+        &__menu::before {
+            content: '';
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -1rem;
+            background-color: colors.$white;
+        }
+
+        &__list {
+            margin-bottom:1.5rem;
+            font-size: .8rem; 
+
+            i {
+                margin-right: .5rem;
+            }
+        }
+
+        &__link {
+            text-transform: capitalize;
+            font-size: .8rem;
+
+            &:hover {
+                color: #00A14E;
+            }
+        }
+
+        @include media-query.footer-top;
+    }
+    // ========================================== FOOTER TOP ======================================================
+
+
+
+
+
+
+
+
+
+    // ========================================== FOOTER BOTTOM ======================================================
+    .footer {
+
+        &__bottom {
+            flex-direction: column;
+            padding-bottom: 3rem;
+        }
+
+        &__logo {
+            margin-bottom: 2rem;;
+        }
+
+        &__logoImg {
+            width: 8rem;
+        }
+
+        &__logoText {
+            font-size: 1.5rem;
+            color: colors.$brand-color;
+            margin-left: .8rem;
+            width: 15rem;
+        }
+
+        &__copy {
+            text-align: center;
+        }
+
+        &__copyright {
+            margin-bottom: .8rem;
+        }
+
+        @include media-query.footer-bottom;
+    }
+    // ========================================== FOOTER BOTTOM ======================================================
+}

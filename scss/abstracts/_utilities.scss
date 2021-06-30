@@ -1,0 +1,90 @@
+@use 'colors';
+@use 'media-query';
+@use '../components/header';
+
+
+
+
+
+
+@mixin universal {
+    *, *::after, *::before {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-size: 16px;
+    }
+    
+    body {
+        font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+        overflow-x: hidden;
+    }
+    
+    @include flexbox;
+    
+    a {
+        text-decoration: none;
+        color: colors.$white;
+    }
+
+    .container {
+        max-width: 80%;
+        margin: auto;
+    }
+    
+    @include media-query.mobile-container;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin flexbox {
+    .flex {
+        display: flex;
+    }
+
+    .flexSpace {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flexSpaceAlign {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flexAlign {
+        display: flex;
+        align-items: center;
+    }
+
+    .flexSpaceAlign-C {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flexSpace-C {
+        display: flex;
+        justify-content: center;
+    }
+}
