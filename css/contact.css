@@ -1367,6 +1367,33 @@ a {
   margin-bottom: 4rem;
   text-transform: capitalize;
 }
+@media only screen and (max-width: 1110px) {
+  .locate {
+    margin-top: 6rem;
+  }
+  .locate__heading {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .locate {
+    margin-top: 5rem;
+  }
+  .locate__heading {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .locate {
+    margin-top: 4rem;
+  }
+  .locate__heading {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}
 
 .fs {
   margin-top: 7rem;

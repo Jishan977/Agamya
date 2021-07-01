@@ -197,6 +197,8 @@
         margin-bottom: variables.$sectionHeadXMB;
         text-transform: capitalize;
     }
+
+    @include media-query.locate;
 }
 
 

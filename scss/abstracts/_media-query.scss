@@ -1914,20 +1914,53 @@
             margin-bottom: 1.5rem;
             flex-direction: column;
             width: 80%;
-
-            // &-name {
-            //     align-self: flex-start;
-            // }
-
-            // textarea {
-            //     width: 100%;
-            //     display: block;
-            //     margin: auto;
-
-            // }
         }
 
         @include button.buttons(.4rem 1.5rem, .8rem, .5);
     }
 }
 // ======================================== CONTACT US ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================== LOCATE US ======================================================
+@mixin locate {
+    @media only screen and (max-width: 1110px) { 
+        margin-top: variables.$sectionLMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-L;
+            margin-bottom: variables.$sectionHeadLMB;
+        }
+    }
+
+    @media only screen and (max-width: 850px) { 
+        margin-top: variables.$sectionMMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-M;
+            margin-bottom: variables.$sectionHeadMMB;
+        }
+    }
+
+    @media only screen and (max-width: 550px) { 
+        margin-top: variables.$sectionSMT;
+    
+        &__heading {
+            font-size: variables.$sectionHeadingFont-S;
+            margin-bottom: variables.$sectionHeadSMB;
+        }
+    }
+}
+
+// ======================================== LOCATE US ======================================================
