@@ -69,7 +69,7 @@
 
             @include navbar.navbar(.4rem);
 
-            @include logo.logo(.35rem, 7rem, 0.7rem, 1rem, 4rem);
+            @include logo.logo(.35rem, 8rem, 0.7rem, 1rem, 4rem);
         }
     }
 }
@@ -292,7 +292,8 @@
         
         .hero {
             height: 100vh;
-            background-image: url(../../Images/Images/HomePage/Slider/Mobile/mobile_slider1.jpg);
+            background-image: url(../Images/Images/HomePage/Slider/mobile_slider1.jpg);
+            width: 100%;
 
             &__layer {
                 background-color: rgba(#000, .4);
@@ -1009,12 +1010,12 @@
         }
     
         &__top {
-            padding: 2rem 0 1rem 0;
+            padding: 3rem 0 1rem 0;
         }
 
         &__heading {
             margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         &__container {
@@ -1032,13 +1033,13 @@
                 width: 100%;
 
                 li {
-                    font-size: .85rem;
+                    font-size: .7rem;
                 }
             }
         }
 
         &__link {
-            font-size: .9rem;
+            font-size: .7rem;
         }
     }
 }
@@ -1063,7 +1064,7 @@
         }
 
         &__copy {
-            font-size: .8rem;
+            font-size: .6rem;
         }
     
         &__copyright {

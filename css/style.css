@@ -124,7 +124,7 @@ a {
   .header__logoText {
     color: #00A14E;
     margin-left: 0.35rem;
-    width: 7rem;
+    width: 8rem;
     font-size: 0.7rem;
     line-height: 1rem;
   }
@@ -1167,7 +1167,8 @@ a {
 
   .hero {
     height: 100vh;
-    background-image: url(../../Images/Images/HomePage/Slider/Mobile/mobile_slider1.jpg);
+    background-image: url(../Images/Images/HomePage/Slider/mobile_slider1.jpg);
+    width: 100%;
   }
   .hero__layer {
     background-color: rgba(0, 0, 0, 0.4);
@@ -2264,11 +2265,11 @@ a {
     align-items: center;
   }
   .footer__top {
-    padding: 2rem 0 1rem 0;
+    padding: 3rem 0 1rem 0;
   }
   .footer__heading {
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .footer__container {
     padding-left: 1rem;
@@ -2284,10 +2285,10 @@ a {
     width: 100%;
   }
   .footer__section:first-child li {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
   }
   .footer__link {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -2326,7 +2327,7 @@ a {
     width: 11rem;
   }
   .footer__copy {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .footer__copyright {
     margin-bottom: 0.5rem;
